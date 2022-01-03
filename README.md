@@ -1,4 +1,16 @@
 
+Running
+
+```
+cd terraform
+terraform init
+terraform apply
+```
+
+Prerequisites 
+
+- Install git (https://git-scm.com/download/win)
+
 - Installed VSCode
 - Installed Live Server extension (https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
@@ -12,7 +24,7 @@
 - terraform init
 - terraform apply
 
--Install git (https://git-scm.com/download/win)
+
 
 
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started-s3.html

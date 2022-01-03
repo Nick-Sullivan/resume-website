@@ -1,0 +1,69 @@
+{
+  
+  "events": [
+    {
+      "start_date": {
+        "year": "2010"
+      },
+      "end_date": {
+        "year": "2016"
+      },
+      "text": {
+        "headline": "Graduate Degree",
+        "text": "<p>Bacheler of Mechatronics Engineering and Computer Science.<br>6.5/7 GPA<br>Honours Project - An Autonomous Ground Vehicle.</p>"
+      },
+      "media": {
+        "url": "images/timeline-undergrad.jpg",
+        "thumbnail": "images/timeline-uofa-logo.png"
+      }
+    },
+    {
+      "start_date": {
+        "year": "2016"
+      },
+      "end_date": {
+        "year": "2019"
+      },
+      "text": {
+        "headline": "Doctorate",
+        "text": "<p>Ph.D in Multi-Robot task allocation and collaborative localisation for ground vehicles.</p>"
+      },
+      "media": {
+        "url": "images/timeline-robots.jpg",
+        "thumbnail": "images/timeline-uofa-logo.png"
+      }
+    },
+    {
+      "start_date": {
+        "year": "2019"
+      },
+      "end_date": {
+        "year": "2021",
+        "month": "10"
+      },
+      "text": {
+        "headline": "MaxMine",
+        "text": "<p>Software engineer and technical team lead.<br>We process mining equipment sensor data to classify operator behaviours, minesite conditions, and tracking material movements.<br>I developed software to provide insight on how to improve minesite operations by reducing fuel usage, improving tyre life, and predicting equipment failures.</p>"
+      },
+      "media": {
+        "url": "images/timeline-maxmine.jpg",
+        "thumbnail": "images/timeline-maxmine-logo.jpg"
+      }
+    },
+    {
+      "start_date": {
+        "year": "2021",
+        "month": "10"
+      },
+      "media": {
+        "url": "images/timeline-tictoc-logo.png",
+        "thumbnail": "images/timeline-tictoc-logo.png"
+        
+      },
+      "text": {
+        "headline": "TicToc",
+        "text": "<p>Software engineer for automated financial decision-making.</p>"
+      }
+    }
+  ]
+}
