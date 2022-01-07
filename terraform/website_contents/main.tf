@@ -17,15 +17,15 @@ provider "aws" {
 }
 
 locals {
-  url           = "nickdavesullivan.com"
+  url           = var.url
   url_secondary = "www.${local.url}"
 }
 
 module "s3_bucket_primary" {
-  source         = "./modules/website_s3_bucket"
+  source         = "./../modules/website_s3_bucket"
   url            = local.url
   index_document = "index.html"
-  source_folder  = "${path.root}/../src"
+  source_folder  = "${path.root}/../../src"
 }
 
 resource "aws_s3_bucket" "secondary" {
@@ -39,7 +39,8 @@ resource "aws_s3_bucket" "secondary" {
 # Route 53 routing
 
 resource "aws_route53_zone" "website" {
-  name = local.url
+  name              = local.url
+  delegation_set_id = var.delegation_set_id
 }
 
 resource "aws_route53_record" "website" {

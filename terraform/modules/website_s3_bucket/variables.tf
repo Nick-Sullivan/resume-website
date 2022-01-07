@@ -1,14 +1,14 @@
 
 variable "url" {
-    type = string
+  type = string
 }
 
 variable "index_document" {
-    type = string
-    default = "index.html"
+  type    = string
+  default = "index.html"
 }
 
 variable "source_folder" {
-    type = string
-    default = "src"
+  type    = string
+  default = "src"
 }
