@@ -29,7 +29,7 @@ terraform apply
 ### Guide I Followed
 
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started-s3.html
-
+https://towardsdatascience.com/static-hosting-with-ssl-on-s3-a4b66fb7cd00
 
 
 

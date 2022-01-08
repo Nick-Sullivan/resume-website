@@ -10,3 +10,7 @@ output "hosted_zone_id" {
 output "website_domain" {
   value = aws_s3_bucket.bucket.website_domain
 }
+
+output "domain_name" {
+  value = aws_s3_bucket.bucket.bucket_domain_name
+}
