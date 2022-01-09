@@ -14,7 +14,7 @@ This creates all the AWS resources to host a static website.
 
    When it comes to terraform, there are two things to note
 
-   - Terraform **does not** support creation/deletion of domains. Domains aren't designed be regularly edited.
+   - Terraform **does not** support creation/deletion of domains. Domains aren't designed to be regularly destroyed.
    - Terraform **does** support creation/deletion of hosted zones. But, it will generate a **new** delegation set. If the delegation set does not match the one used by the domain, it will not work.
 
    The workaround is in the folder `website_domain`, which creates a new delegation set. 
@@ -30,9 +30,9 @@ This creates all the AWS resources to host a static website.
 
 1. Manually copy the name servers displayed in the output, and paste them into AWS ([Route53](https://console.aws.amazon.com/route53/home#DomainListing:) -> Registered domains -> Click your domain -> Add or edit name servers)
 
-1. Save the delegation set ID as a variable in `website_contents/variables.tf`.
+1. Save the delegation set ID as a variable in `website_contents/variables.tf`, and edit the name your domain.
 
-   This means we can create/destroy all resources in the `website_contents` (including the hosted zone), and be confident that the name servers will match up with the domain. If we ever destroy `website_domain`, we will need to manually edit the domain name servers.
+   This means we can create/destroy all resources in the `website_contents` (including the hosted zone), and be confident that the name servers will match up with the domain. If we ever destroy `website_domain`, we will need to manually edit the domain name servers again.
 
 1. Create the rest of the resources
    ```bash

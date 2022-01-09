@@ -8,7 +8,7 @@ terraform {
 }
 
 locals {
-  url     = var.url
+  url     = var.domain
   url_www = "www.${local.url}"
   tags = {
     Project = "Website CV"
@@ -64,12 +64,12 @@ module "alias_www" {
 # Create a CloudFront distribution that redirects to our S3 bucket, and allows SSL
 
 module "cloudfront" {
-  source = "./../modules/website_cloudfront"
+  source            = "./../modules/website_cloudfront"
+  domain_name       = local.url
+  alternative_names = [local.url_www]
+  s3_url            = module.s3_bucket.public_url
+  zone_id           = aws_route53_zone.website.zone_id
   providers = {
     aws = aws.us-east-1
   }
-  domain_name       = local.url
-  alternative_names = [local.url_www]
-  zone_id           = aws_route53_zone.website.zone_id
-  s3_url            = module.s3_bucket.public_url
 }

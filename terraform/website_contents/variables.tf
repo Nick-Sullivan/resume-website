@@ -1,11 +1,13 @@
 
 variable "delegation_set_id" {
-  type    = string
-  default = "N1001127O57NUYHT3J3I"
+  description = "The output from website_domain. See README for more info."
+  type        = string
+  default     = "N1001127O57NUYHT3J3I"
 }
 
-variable "url" {
-  type    = string
-  default = "nickdavesullivan.com"
+variable "domain" {
+  description = "The domain to create a website for."
+  type        = string
+  default     = "nickdavesullivan.com"
 }
 
