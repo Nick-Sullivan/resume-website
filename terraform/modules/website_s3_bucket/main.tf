@@ -1,9 +1,18 @@
+# Creates the S3 bucket, adds all files from src, and makes it public.
+
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
+  }
+}
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = var.url
+  bucket = var.name
 
   website {
-    index_document = var.index_document
+    index_document = "index.html"
   }
 }
 

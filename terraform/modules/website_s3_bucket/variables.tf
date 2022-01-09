@@ -1,14 +1,10 @@
 
-variable "url" {
-  type = string
-}
-
-variable "index_document" {
-  type    = string
-  default = "index.html"
+variable "name" {
+  description = "Name of the bucket, normal to use the domain name"
+  type        = string
 }
 
 variable "source_folder" {
-  type    = string
-  default = "src"
+  description = "Location of the source folder, contents will be uploaded to S3"
+  type        = string
 }
