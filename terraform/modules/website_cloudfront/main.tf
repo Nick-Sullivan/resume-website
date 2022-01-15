@@ -58,6 +58,9 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     cached_methods         = ["GET", "HEAD"]
     target_origin_id       = "CV"
     viewer_protocol_policy = "redirect-to-https"
+    min_ttl                = 86400
+    default_ttl            = 86400
+    max_ttl                = 86400
     forwarded_values {
       query_string = false
       cookies {
