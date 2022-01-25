@@ -5,6 +5,11 @@ terraform {
       version = "3.70.0"
     }
   }
+  backend "s3" {
+    bucket = "nicks-terraform-states"
+    key    = "resume_website/website_contents/terraform.tfstate"
+    region = "ap-southeast-2"
+  }
 }
 
 locals {

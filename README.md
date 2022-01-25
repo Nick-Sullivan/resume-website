@@ -5,6 +5,11 @@ This creates all the AWS resources to host a static website.
 
 # Running
 
+1. Create an s3 bucket to store your terraform state files
+
+   We shouldn't commit state files to source control, as they can store passwords in plaintext. I use a private S3 bucket to store all the state files.
+
+   Edit the `backend "s3"` sections of `website_contents/main.tf` and `website_domain/main.tf`. Or if you want to store state files locally, comment out those sections.
 
 1. [Register a domain.](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register-update.html)
 
