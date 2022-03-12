@@ -10,8 +10,12 @@ terraform {
 
 resource "aws_s3_bucket" "bucket" {
   bucket = var.name
-  website {
-    index_document = "index.html"
+}
+
+resource "aws_s3_bucket_website_configuration" "bucket" {
+  bucket = aws_s3_bucket.bucket.bucket
+  index_document {
+    suffix = "index.html"
   }
 }
 
@@ -54,3 +58,21 @@ resource "aws_s3_bucket_object" "static_files" {
   etag         = each.value.digests.md5
 }
 
+
+# Log events from the bucket
+
+resource "aws_s3_bucket" "logging" {
+  bucket = "${var.name}-logs"
+}
+
+resource "aws_s3_bucket_logging" "logging" {
+  bucket = aws_s3_bucket.bucket.id
+
+  target_bucket = aws_s3_bucket.logging.id
+  target_prefix = "log/"
+}
+
+resource "aws_s3_bucket_acl" "logging" {
+  bucket = aws_s3_bucket.logging.id
+  acl    = "log-delivery-write"
+}

@@ -51,16 +51,17 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   default_root_object = "index.html"
   enabled             = true
   is_ipv6_enabled     = true
-  price_class         = "PriceClass_All"
+  price_class         = "PriceClass_100"
 
   default_cache_behavior {
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
     target_origin_id       = "CV"
     viewer_protocol_policy = "redirect-to-https"
-    min_ttl                = 86400
-    default_ttl            = 86400
-    max_ttl                = 86400
+    min_ttl                = 31516000
+    default_ttl            = 31516000
+    max_ttl                = 31516000
+    compress               = true
     forwarded_values {
       query_string = false
       cookies {
