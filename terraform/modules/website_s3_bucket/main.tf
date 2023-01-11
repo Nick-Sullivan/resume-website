@@ -61,18 +61,18 @@ resource "aws_s3_bucket_object" "static_files" {
 
 # Log events from the bucket
 
-resource "aws_s3_bucket" "logging" {
-  bucket = "${var.name}-logs"
-}
+# resource "aws_s3_bucket" "logging" {
+#   bucket = "${var.name}-logs"
+# }
 
-resource "aws_s3_bucket_logging" "logging" {
-  bucket = aws_s3_bucket.bucket.id
+# resource "aws_s3_bucket_logging" "logging" {
+#   bucket = aws_s3_bucket.bucket.id
 
-  target_bucket = aws_s3_bucket.logging.id
-  target_prefix = "log/"
-}
+#   target_bucket = aws_s3_bucket.logging.id
+#   target_prefix = "log/"
+# }
 
-resource "aws_s3_bucket_acl" "logging" {
-  bucket = aws_s3_bucket.logging.id
-  acl    = "log-delivery-write"
-}
+# resource "aws_s3_bucket_acl" "logging" {
+#   bucket = aws_s3_bucket.logging.id
+#   acl    = "log-delivery-write"
+# }
